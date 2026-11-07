@@ -60,8 +60,49 @@
 .scene.invitation .down{opacity:1;pointer-events:auto;transition:opacity .9s ease .5s}
 .scene.video-playing:after,.scene.invitation:after{animation:none;background:none}
 @media(prefers-reduced-motion:reduce){.scene.invitation .reveal{transition:none}}
+
+/* Layali cinematic redesign */
+:root{--gold:#e8c99c;--cream:#fff8f0}
+html,body{background:#100d12}
+.shell{max-width:520px;background:#100d12;box-shadow:0 0 85px #0009}
+.scene{height:100svh;min-height:0;background:#120e13}
+.scene:before{background:linear-gradient(180deg,#120d1760 0%,transparent 25%,transparent 62%,#100b14aa 100%);z-index:3}
+.cinematic-video{object-fit:cover}
+.topmark{top:5%;font:26px Amiri;color:#f9e9d5;letter-spacing:2px;z-index:7}
+.intro{bottom:9%;left:7%;right:7%;background:none;padding:0;text-align:center;z-index:8}
+.intro h1{font:400 35px Amiri;margin:0 0 8px}
+.intro p{font-size:13px;color:#f7e8db;line-height:1.9}
+.openbtn{margin-top:18px;background:#f9ead8e8;border:1px solid #fff8e6;color:#4d3340;padding:13px 32px;font:700 14px Cairo;box-shadow:0 12px 32px #0008;animation:none}
+.reveal{top:34%;left:5%;right:5%;padding:35px 8px;background:radial-gradient(ellipse,#140e19b8 0%,#140e1955 45%,transparent 73%);text-shadow:0 2px 20px #000;z-index:6;opacity:0;transform:translateY(16px) scale(.97);pointer-events:none}
+.reveal .small{font:21px Amiri;color:#f9e5d6}
+.reveal h2{font:700 clamp(40px,11vw,64px) Amiri;color:#fff9f2;line-height:1.45;margin:12px 0}
+.reveal .amp{color:#e7c5a4;font:italic 32px Georgia}
+.reveal p{font:17px Amiri;color:#fff3e9}
+.scene.video-playing .reveal{opacity:0}
+.scene.names-visible .reveal,.scene.invitation .reveal{opacity:1;transform:translateY(0) scale(1);transition:opacity 1.7s ease,transform 1.9s cubic-bezier(.2,.75,.2,1)}
+.scene.video-playing .topmark{opacity:1}
+.scene.invitation .topmark{opacity:1}
+.scene .down{bottom:8%;background:#211824a8;border:1px solid #e4c6b388;backdrop-filter:blur(10px);font-size:13px;z-index:8}
+.scene.invitation .down{opacity:1;pointer-events:auto}
+.scene .garden,.scene .frame,.scene .vine,.scene .petal,.scene .cinematic-status{display:none!important}
+.details{padding:85px 24px 85px;background:linear-gradient(180deg,#211823 0%,#332330 52%,#171119 100%)}
+.details:before{content:"✦";letter-spacing:0;color:#d8bca2}
+.details>.eyebrow{font:11px Georgia;letter-spacing:4px;color:#d8c0b1}
+.details>h2{font:400 38px Amiri;margin:22px 0 8px}
+.details>.muted{line-height:2;font-size:13px}
+.card{margin:32px 0;padding:37px 20px;border:1px solid #d9bda066;border-radius:180px 180px 16px 16px;background:linear-gradient(155deg,#fff6e80d,#fff6e803);box-shadow:inset 0 0 0 7px #ffffff05}
+.card h2{font:700 39px Amiri;color:#fff3e3;margin:16px 0}
+.date{font:700 27px Amiri}
+.card p{line-height:1.8}
+.actions{gap:14px}
+.outline{border:1px solid #dbc3aa99;background:#ffffff07;color:#f7e6d4}
+.goldbtn{background:#f3dec4;color:#392936;box-shadow:none}
+.toolbar{position:relative;bottom:auto;left:auto;transform:none;margin:0 auto;width:min(100%,520px);border:0;border-top:1px solid #9e84905e;border-radius:0;background:#171119;gap:10px;padding:14px}
+.toolbar button,.toolbar select{background:#2c222e;color:#ebd9cc;border:1px solid #705866}
+.footer{opacity:.65}
+@media(max-width:450px){.scene{min-height:0}.intro{bottom:10%}.reveal{top:33%}.details{padding-left:22px;padding-right:22px}}
 </style></head><body>
-<div class="shell" id="app"><section class="scene" id="scene"><video class="cinematic-video" id="doorVideo" muted playsinline webkit-playsinline preload="auto" aria-label="فيديو سينمائي لفتح أبواب حديقة الزفاف"><source src="./kling_20261106_VIDEO_Ultra_phot_5867_0_1.mp4" type="video/mp4"></video><div class="garden"><div class="sun"></div></div><div class="topmark">✧ ليالي ✧</div><div class="cinematic-status" id="cinematicStatus" aria-live="polite">تُفتح أبواب الحكاية...</div><div class="reveal"><div class="small">بكل الحب والفرح</div><h2><span data-field="groom">أحمد</span> <span class="amp">&</span> <span data-field="bride">نور</span></h2><p>يسعدنا أن تشاركونا أجمل لحظات العمر</p><div style="font-size:30px">🦋 ✨ 🦋</div></div><div class="frame" role="img" aria-label="باب خشبي كلاسيكي مزين بالورود"><div class="door leftdoor"></div><div class="door rightdoor"></div></div><div class="vine v1">🌸🌿🌺🌷🌿🌸</div><div class="vine v2">🌷🌿🌸🌺🌿🌷</div><div class="vine v3">🌸🌿🌷🌺</div><div class="vine v4">🌺🌷🌿🌸</div><span class="petal p1">🌸</span><span class="petal p2">🌷</span><span class="petal p3">✿</span><span class="petal p4">🦋</span><div class="intro"><h1>دعوة من القلب</h1><p>وراء الأبواب حكاية حب تنتظر أن تُروى</p><button class="openbtn" id="open">افتح أبواب الحكاية ✦</button></div><button class="down" id="down">اكتشف تفاصيل الحفل ↓</button></section>
+<div class="shell" id="app"><section class="scene" id="scene"><video class="cinematic-video" id="doorVideo" muted playsinline webkit-playsinline preload="auto" aria-label="فيديو سينمائي لفتح أبواب حديقة الزفاف"><source src="./kling_20261106_VIDEO_Ultra_phot_5867_0_1.mp4" type="video/mp4"></video><div class="garden"><div class="sun"></div></div><div class="topmark">✧ ليالي ✧</div><div class="cinematic-status" id="cinematicStatus" aria-live="polite">تُفتح أبواب الحكاية...</div><div class="reveal"><div class="small">بكل الحب والفرح</div><h2><span data-field="groom">أحمد</span> <span class="amp">&</span> <span data-field="bride">نور</span></h2><p>يسعدنا أن تشاركونا أجمل لحظات العمر</p><div style="font:18px Georgia;color:#f5d8b7;letter-spacing:12px">✦ · ✦</div></div><div class="frame" role="img" aria-label="باب خشبي كلاسيكي مزين بالورود"><div class="door leftdoor"></div><div class="door rightdoor"></div></div><div class="vine v1">🌸🌿🌺🌷🌿🌸</div><div class="vine v2">🌷🌿🌸🌺🌿🌷</div><div class="vine v3">🌸🌿🌷🌺</div><div class="vine v4">🌺🌷🌿🌸</div><span class="petal p1"></span><span class="petal p2">🌷</span><span class="petal p3">✿</span><span class="petal p4">🦋</span><div class="intro"><h1>دعوة من القلب</h1><p>وراء الأبواب حكاية حب تنتظر أن تُروى</p><button class="openbtn" id="open">المس لفتح الدعوة ✦</button></div><button class="down" id="down">اكتشف تفاصيل الحفل ↓</button></section>
 <section class="details" id="details"><div class="eyebrow">WEDDING INVITATION</div><h2>بكل الحب ندعوكم</h2><p class="muted">ليكتمل فرحنا بحضوركم ومشاركتكم أجمل ليلة</p><div class="card"><p class="eyebrow">حفل زفاف</p><h2><span data-field="groom">أحمد</span> ♡ <span data-field="bride">نور</span></h2><div class="date" data-field="date">20 ديسمبر 2026</div><p class="muted" data-field="time">الساعة السابعة مساءً</p><div style="font-size:24px;color:#e5c99f">✦ ❀ ✦</div><p data-field="venue">قاعة ليالي الملكية</p><p class="muted" data-field="city">بغداد، العراق</p></div><div class="actions"><a id="map" class="outline" href="https://maps.google.com" target="_blank" rel="noopener">📍 موقع الحفل على الخريطة</a><button class="goldbtn" id="rsvpBtn">تأكيد الحضور ♡</button></div><div class="rsvp" id="rsvp"><h3>هل ستشاركونا الفرحة؟</h3><input id="guest" placeholder="اسم الضيف" aria-label="اسم الضيف"><select id="answer" aria-label="الرد"><option value="yes">نعم، سأحضر بكل سرور</option><option value="no">أعتذر عن الحضور</option></select><button class="goldbtn" id="sendRsvp">تسجيل الرد</button><p class="muted">نسخة تجريبية: الرد يُحفظ على جهازك فقط.</p></div><div class="footer">صُنعت بحب ♡ ليالي</div></section></div>
 <div class="toolbar"><button id="edit">✎ تعديل البيانات</button><select id="theme" aria-label="ستايل الدعوة"><option value="romantic">Romantic Flowers</option><option value="royal">Royal Gold</option><option value="emerald">Emerald Luxury</option><option value="lavender">Lavender Dream</option><option value="burgundy">Burgundy Velvet</option><option value="modern">Modern Minimal</option></select><button id="restart">↻ إعادة المشهد</button></div>
 <div class="editor" id="editor"><h2>✦ تخصيص دعوة ليالي</h2><p class="muted">عدّل البيانات وشاهدها فوراً في الدعوة. هذه معاينة تجريبية وليست حساب زبون مفعّل.</p><label>اسم العريس</label><input id="groomInput"><label>اسم العروس</label><input id="brideInput"><label>تاريخ الحفل</label><input id="dateInput"><label>الوقت</label><input id="timeInput"><label>اسم القاعة</label><input id="venueInput"><label>المدينة</label><input id="cityInput"><label>رابط Google Maps</label><input id="mapInput"><button class="goldbtn" id="save">حفظ ومعاينة الدعوة</button><button class="outline" id="close">إغلاق</button></div><div class="toast" id="toast" role="status"></div>
@@ -69,9 +110,10 @@
 const defaults={groom:'أحمد',bride:'نور',date:'20 ديسمبر 2026',time:'الساعة السابعة مساءً',venue:'قاعة ليالي الملكية',city:'بغداد، العراق',map:'https://maps.google.com',theme:'romantic'};let data;try{data={...defaults,...JSON.parse(localStorage.getItem('layali-demo')||'{}')}}catch{data={...defaults}}
 const $=id=>document.getElementById(id);const fields=['groom','bride','date','time','venue','city','map'];function render(){for(const k of fields){document.querySelectorAll('[data-field="'+k+'"]').forEach(el=>el.textContent=data[k])} $('map').href=/^https:\/\//.test(data.map)?data.map:'https://maps.google.com';$('theme').value=data.theme;applyTheme();}function applyTheme(){const t=data.theme;const themes={romantic:['#f5b9cf','#ac7bba','#e8c99c'],royal:['#d8b66c','#71513d','#f6d59c'],emerald:['#a4d3aa','#315a4b','#d9b778'],lavender:['#cbb1f5','#8e70b5','#f4d8c2'],burgundy:['#e7a5b5','#662e4b','#f0c59c'],modern:['#e9ded0','#a4a1a0','#d4c4b5']};const c=themes[t]||themes.romantic;document.documentElement.style.setProperty('--pink',c[0]);document.documentElement.style.setProperty('--violet',c[1]);document.documentElement.style.setProperty('--gold',c[2]);$('scene').style.filter=t==='emerald'?'hue-rotate(42deg)':t==='lavender'?'hue-rotate(18deg)':t==='burgundy'?'hue-rotate(-35deg)':t==='modern'?'saturate(.65)':t==='royal'?'sepia(.18)':'none';}function notify(s){$('toast').textContent=s;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',3200)}const doorVideo=$('doorVideo');let videoFallback=null;
 function clearSequence(){if(videoFallback){clearTimeout(videoFallback);videoFallback=null}}
-function resetSequence(){clearSequence();doorVideo.pause();try{doorVideo.currentTime=0}catch(e){}$('scene').classList.remove('opened','opening','entering','invitation','video-playing');$('open').disabled=false}
-function finishSequence(){clearSequence();$('scene').classList.remove('video-playing');$('scene').classList.add('invitation');$('open').disabled=false}
+function resetSequence(){clearSequence();doorVideo.pause();try{doorVideo.currentTime=0}catch(e){}$('scene').classList.remove('opened','opening','entering','invitation','video-playing','names-visible');$('open').disabled=false}
+function finishSequence(){clearSequence();$('scene').classList.remove('video-playing');$('scene').classList.add('names-visible','invitation');$('open').disabled=false}
 function beginSequence(){const scene=$('scene');if(scene.classList.contains('video-playing'))return;resetSequence();$('open').disabled=true;scene.classList.add('video-playing');if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){finishSequence();return}const p=doorVideo.play();if(p&&p.catch)p.catch(()=>{resetSequence();notify('تعذّر تشغيل الفيديو. تأكد من اتصال الإنترنت ثم حاول مجدداً')});}
+doorVideo.addEventListener('timeupdate',()=>{if($('scene').classList.contains('video-playing')&&doorVideo.duration&&doorVideo.currentTime>=Math.max(1.8,doorVideo.duration*.43))$('scene').classList.add('names-visible')});
 doorVideo.addEventListener('ended',finishSequence);
 doorVideo.addEventListener('error',()=>{if($('scene').classList.contains('video-playing')){resetSequence();notify('تعذّر تحميل الفيديو. حاول مرة ثانية')}});
 $('open').onclick=beginSequence;$('down').onclick=()=>$('details').scrollIntoView({behavior:'smooth'});$('restart').onclick=()=>{resetSequence();window.scrollTo({top:0,behavior:'smooth'})};
